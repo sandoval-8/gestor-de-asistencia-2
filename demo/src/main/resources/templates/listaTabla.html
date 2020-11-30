@@ -10,30 +10,20 @@
         	<th class="celda celdaCabecera">id</th>
             <th class="celda celdaCabecera">nombre</th>
             <th class="celda celdaCabecera">apellido</th>
-            <th class="celda celdaCabecera">valor</th>
-        </tr>
-        <tr id="fila">
-        	<td id="celda">123</td>
-            <td id="celda">lucas</td>
-            <td id="celda">sandoval</td>
-            <td id="celda">ak-98</td>
-        </tr>
-        <tr id="fila">
-        	<td id="celda">456</td>
-            <td id="celda">gurruwin</td>
-            <td id="celda">sandoval</td>
-            <td id="celda">f4-68</td>
-        </tr>
-        <tr id="fila">
-            <td id="celda">789</td>
-            <td id="celda">diana</td>
-            <td id="celda">sandoval</td>
-            <td id="celda">sd-4</td>
+            <th class="celda celdaCabecera">funcion</th>
+            <th class="celda celdaCabecera">domicilio</th>
+            <th class="celda celdaCabecera">oficina</th>
+            <th class="celda celdaCabecera">horario</th>
+            <th class="celda celdaCabecera">legajo</th>
         </tr>
         <tr th:each="persona : ${personas}">
-			<td id="celda" th:text="${persona.id}">sd-4</td>
+		<td id="celda" th:text="${persona.id}">sd-4</td>
 			<td id="celda" th:text="${persona.nombre}">sd-4</td>
 			<td id="celda" th:text="${persona.apellido}">sd-4</td>
+			<td id="celda" th:text="${persona.funcion}">sd-4</td>
+			<td id="celda" th:text="${persona.domicilio}">sd-4</td>
+			<td id="celda" th:text="${persona.oficina}">sd-4</td>
+			<td id="celda" th:text="${persona.horario}">sd-4</td>
 			<td id="celda" th:text="${persona.legajo}">sd-4</td>
         </tr>
     </table>
