@@ -8,6 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.DTO.personDTO;
+import com.example.demo.mappings.PersonToPersonDTOMapper;
 import com.example.demo.model.person;
 import com.example.demo.repository.personRepository;
 
@@ -17,8 +19,15 @@ public class personService{
 	@Autowired
 	private personRepository repositorio;
 	
-	public List<person> personAll(){
-		List<person> personas = new ArrayList<person>();
-		return personas = repositorio.findAll();
+	@Autowired
+	private PersonToPersonDTOMapper mapeo;
+	
+	public List<personDTO> personAll(){
+		List<personDTO> personasDTO = new ArrayList<personDTO>();		
+		for(person persona : repositorio.findAll()) {
+			personDTO personaDTO = mapeo.personToPersonDTO(persona);
+			personasDTO.add(personaDTO);
+		}
+		return personasDTO;
 	}
 }
