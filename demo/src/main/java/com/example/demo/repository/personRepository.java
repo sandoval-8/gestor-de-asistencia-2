@@ -10,5 +10,5 @@ import com.example.demo.model.person;
 
 public interface personRepository extends JpaRepository<person, Long>{
 	
-//	public List<person> findByAll();
+	public List<person> findByPerson(person persona);
 }

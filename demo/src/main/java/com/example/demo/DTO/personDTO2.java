@@ -5,7 +5,7 @@ import com.example.demo.model.person;
 import lombok.Data;
 
 @Data
-public class personDTO {
+public class personDTO2 {
 	
 	public Long id;	
 	public String nombre;
@@ -16,31 +16,14 @@ public class personDTO {
 	public String horario;
 	public String legajo;
 	
-	public personDTO() {
-		
-	}
-	public personDTO(person persona) {
-		this.id = persona.getId();
-		this.nombre = persona.getNombre();
-		this.apellido = persona.getApellido();
-		this.funcion = persona.getFuncion();
-		this.domicilio = persona.getApellido();
-		this.oficina = persona.getOficina();
-		this.horario = persona.getHorario();
-		this.legajo = persona.getLegajo();
-	}
-	
-	
-	
-/*	public personDTO(person persona) {
+	public personDTO2(person persona) {
 		this.id = persona.getId();
 		this.nombre = persona.getNombre();
 		this.apellido = persona.getApellido();
 		this.funcion = persona.getFuncion();
 		this.domicilio = persona.getDomicilio();
-		this.oficina = persona.getHorario();
+		this.oficina = persona.getOficina();
 		this.horario = persona.getHorario();
 		this.legajo = persona.getLegajo();
-	}	*/
-
+	}
 }

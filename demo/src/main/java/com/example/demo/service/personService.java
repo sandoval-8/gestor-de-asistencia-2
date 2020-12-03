@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.DTO.personDTO;
-import com.example.demo.mappings.PersonToPersonDTOMapper;
+import com.example.demo.convert.convert;
 import com.example.demo.model.person;
 import com.example.demo.repository.personRepository;
 
@@ -20,14 +20,50 @@ public class personService{
 	private personRepository repositorio;
 	
 	@Autowired
-	private PersonToPersonDTOMapper mapeo;
+	private convert convertidor;
 	
+	//CONSULTA TODAS LAS PERSONAS
 	public List<personDTO> personAll(){
 		List<personDTO> personasDTO = new ArrayList<personDTO>();		
-		for(person persona : repositorio.findAll()) {
-			personDTO personaDTO = mapeo.personToPersonDTO(persona);
-			personasDTO.add(personaDTO);
+		for(person persona : repositorio.findAll()) {		
+			personasDTO.add(convertidor.getPersonDTO(persona));
 		}
 		return personasDTO;
+	}
+	
+	//CONSULTA UNA SOLA PERSONA
+	public personDTO person(Long id) {
+		return convertidor.getPersonDTO(repositorio.findById(id).get());
+	}
+	
+	//CREA UNA PERSONA
+	public personDTO createPerson(personDTO personaDTO) {
+		person persona = (person)repositorio.findByPerson(convertidor.getPerson(personaDTO));
+		if(persona != null) {
+			System.out.println("El usuario ya existe");
+			return convertidor.getPersonDTO(persona);
+		}else {
+			return convertidor.getPersonDTO((person)repositorio.save(convertidor.getPerson(personaDTO)));
+		}
+	}
+	
+	//ACTUALIZA UNA PERSONA
+	public personDTO personUpdate(personDTO personaDTO) {
+		personDTO personaConsulta = convertidor.getPersonDTO((repositorio.findById(personaDTO.getId()).get()));
+		if(personaConsulta != null) {
+			return convertidor.getPersonDTO((person)repositorio.save(convertidor.getPerson(personaDTO)));
+		}
+		return null;
+	} 
+	
+	//BORRA UNA PERSONA
+	public boolean personDelete(Long id) {
+		person persona = repositorio.findById(id).get();
+		if(persona != null) {
+			repositorio.delete(persona);
+			return true;
+		}
+		return false;
+		
 	}
 }

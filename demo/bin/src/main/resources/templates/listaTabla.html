@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table id="tabla">
+    	<tr id="fila cabecera">
+        	<th class="celda celdaCabecera">id</th>
+            <th class="celda celdaCabecera">nombre</th>
+            <th class="celda celdaCabecera">apellido</th>
+            <th class="celda celdaCabecera">funcion</th>
+            <th class="celda celdaCabecera">domicilio</th>
+            <th class="celda celdaCabecera">oficina</th>
+            <th class="celda celdaCabecera">horario</th>
+            <th class="celda celdaCabecera">legajo</th>
+        </tr>
+        <tr th:each="persona : ${personas}">
+		<td id="celda" th:text="${persona.id}">sd-4</td>
+			<td id="celda" th:text="${persona.nombre}">sd-4</td>
+			<td id="celda" th:text="${persona.apellido}">sd-4</td>
+			<td id="celda" th:text="${persona.funcion}">sd-4</td>
+			<td id="celda" th:text="${persona.domicilio}">sd-4</td>
+			<td id="celda" th:text="${persona.oficina}">sd-4</td>
+			<td id="celda" th:text="${persona.horario}">sd-4</td>
+			<td id="celda" th:text="${persona.legajo}">sd-4</td>
+        </tr>
+    </table>
+	     
+</body>
+</html>
