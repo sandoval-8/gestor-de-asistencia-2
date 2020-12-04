@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -17,7 +19,10 @@ public class person {
 	private String nombre;
 	private String apellido;
 	private String funcion;
-	private String domicilio;
+	
+	@ManyToOne
+	@JoinColumn(name = "domicilio")
+	private centro domicilio;
 	private String oficina;
 	private String horario;
 	private String legajo;
@@ -46,10 +51,10 @@ public class person {
 	public void setFuncion(String funcion) {
 		this.funcion = funcion;
 	}
-	public String getDomicilio() {
+	public centro getDomicilio() {
 		return domicilio;
 	}
-	public void setDomicilio(String domicilio) {
+	public void setDomicilio(centro domicilio) {
 		this.domicilio = domicilio;
 	}
 	public String getOficina() {

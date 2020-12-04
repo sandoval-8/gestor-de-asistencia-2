@@ -10,6 +10,6 @@ import com.example.demo.model.person;
 public interface PersonToPersonDTOMapper {
 	PersonToPersonDTOMapper INSTANCE = Mappers.getMapper(PersonToPersonDTOMapper.class);
 	
-	personDTO personToPersonDTO(person persona);
-	person personDTOToPerson(personDTO personaDTO);
+//	personDTO personToPersonDTO(person persona);
+//	person personDTOToPerson(personDTO personaDTO);
 }

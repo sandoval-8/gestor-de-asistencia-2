@@ -38,7 +38,7 @@ public class personService{
 	
 	//CREA UNA PERSONA
 	public personDTO createPerson(personDTO personaDTO) {
-		person persona = (person)repositorio.findByPerson(convertidor.getPerson(personaDTO));
+		person persona = (person)repositorio.findById(convertidor.getPerson(personaDTO).getId()).get();
 		if(persona != null) {
 			System.out.println("El usuario ya existe");
 			return convertidor.getPersonDTO(persona);

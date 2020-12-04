@@ -1,5 +1,6 @@
 package com.example.demo.DTO;
 
+import com.example.demo.model.centro;
 import com.example.demo.model.person;
 
 import lombok.Data;
@@ -11,25 +12,14 @@ public class personDTO {
 	public String nombre;
 	public String apellido;
 	public String funcion;
-	public String domicilio;
+	public centro domicilio;
 	public String oficina;
 	public String horario;
 	public String legajo;
 	
 	public personDTO() {
 		
-	}
-	public personDTO(person persona) {
-		this.id = persona.getId();
-		this.nombre = persona.getNombre();
-		this.apellido = persona.getApellido();
-		this.funcion = persona.getFuncion();
-		this.domicilio = persona.getApellido();
-		this.oficina = persona.getOficina();
-		this.horario = persona.getHorario();
-		this.legajo = persona.getLegajo();
-	}
-	
+	}	
 	
 	
 /*	public personDTO(person persona) {
