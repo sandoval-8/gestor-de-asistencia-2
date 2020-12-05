@@ -3,12 +3,14 @@ package com.example.demo.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import com.example.demo.model.centro;
 import com.example.demo.model.person;
 
-
+@EnableJpaRepositories
 public interface personRepository extends JpaRepository<person, Long>{
 	
-//	public List<person> findByPerson(person persona);
+	public List<person> findByCentroSalud(centro Centro);
+	
 }

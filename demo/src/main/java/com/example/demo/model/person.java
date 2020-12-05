@@ -18,11 +18,11 @@ public class person {
 	
 	private String nombre;
 	private String apellido;
-	private String funcion;
+	private String funcion;	
+//	private centro domicilio;
 	
 	@ManyToOne
-	@JoinColumn(name = "domicilio")
-	private centro domicilio;
+	private centro centroSalud;
 	private String oficina;
 	private String horario;
 	private String legajo;
@@ -51,12 +51,12 @@ public class person {
 	public void setFuncion(String funcion) {
 		this.funcion = funcion;
 	}
-	public centro getDomicilio() {
+/*	public centro getDomicilio() {
 		return domicilio;
 	}
 	public void setDomicilio(centro domicilio) {
 		this.domicilio = domicilio;
-	}
+	} */
 	public String getOficina() {
 		return oficina;
 	}

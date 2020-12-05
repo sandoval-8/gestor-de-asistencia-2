@@ -18,7 +18,7 @@ public class convert {
 		persona.setNombre(personaDTO.getNombre());
 		persona.setApellido(personaDTO.getApellido());
 		persona.setFuncion(personaDTO.getFuncion());
-		persona.setDomicilio(personaDTO.getDomicilio());
+//		persona.setDomicilio(personaDTO.getDomicilio());
 		persona.setOficina(personaDTO.getOficina());
 		persona.setHorario(personaDTO.getHorario());
 		persona.setLegajo(personaDTO.getLegajo());
@@ -33,7 +33,7 @@ public class convert {
 		personaDTO.setNombre(persona.getNombre());
 		personaDTO.setApellido(persona.getApellido());
 		personaDTO.setFuncion(persona.getFuncion());
-		personaDTO.setDomicilio(persona.getDomicilio());
+//		personaDTO.setDomicilio(persona.getDomicilio());
 		personaDTO.setOficina(persona.getOficina());
 		personaDTO.setHorario(persona.getHorario());
 		personaDTO.setLegajo(persona.getLegajo());

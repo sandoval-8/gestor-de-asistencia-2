@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.DTO.centroDTO;
 import com.example.demo.DTO.personDTO;
+import com.example.demo.service.centroService;
 import com.example.demo.service.personService;
 
 @Controller
@@ -24,7 +26,15 @@ import com.example.demo.service.personService;
 public class crud_controller {
 	
 	@Autowired
-	public personService servicioPersona;
+	private personService servicioPersona;
+	
+	@Autowired
+	private centroService servicioCentro;
+	
+	@GetMapping("/centros")
+	public ResponseEntity<List<personDTO>> getCentros(@RequestBody centroDTO CentroDTO){
+		return new ResponseEntity<List<personDTO>>(servicioPersona.personForCentro(CentroDTO), HttpStatus.OK);
+	}
 	
 	@GetMapping
 	@ResponseBody

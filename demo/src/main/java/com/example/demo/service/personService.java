@@ -8,8 +8,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.DTO.centroDTO;
 import com.example.demo.DTO.personDTO;
 import com.example.demo.convert.convert;
+import com.example.demo.convert.convertCentro;
 import com.example.demo.model.person;
 import com.example.demo.repository.personRepository;
 
@@ -21,6 +23,19 @@ public class personService{
 	
 	@Autowired
 	private convert convertidor;
+	
+	@Autowired
+	private convertCentro convertidorCentro;
+	
+	//CONSULTAR PERSONAS POR CENTRO
+	public List<personDTO> personForCentro(centroDTO CentroDTO){
+		
+		List<personDTO> personasDTO = new ArrayList<personDTO>();		
+		for(person persona : repositorio.findByCentroSalud(convertidorCentro.getCentro(CentroDTO))) {				
+			personasDTO.add(convertidor.getPersonDTO(persona));
+		}
+		return personasDTO;
+	}
 	
 	//CONSULTA TODAS LAS PERSONAS
 	public List<personDTO> personAll(){

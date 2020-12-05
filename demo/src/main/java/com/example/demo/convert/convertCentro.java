@@ -1,8 +1,11 @@
 package com.example.demo.convert;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.DTO.centroDTO;
 import com.example.demo.model.centro;
 
+@Component
 public class convertCentro {
 	
 	public convertCentro() {
@@ -13,7 +16,8 @@ public class convertCentro {
 		centro Centro = new centro();
 		
 		Centro.setId(CentroDTO.getId());
-		Centro.setDomicilio(CentroDTO.getDomicilio());
+		Centro.setNombreCentro(CentroDTO.getNombreCentro());
+	//	Centro.setPersonal(CentroDTO.getPersonal());
 		
 		return Centro;
 	}
@@ -22,7 +26,8 @@ public class convertCentro {
 		centroDTO CentroDTO = new centroDTO();
 		
 		CentroDTO.setId(Centro.getId());
-		CentroDTO.setDomicilio(Centro.getDomicilio());
+		CentroDTO.setNombreCentro(Centro.getNombreCentro());
+	//	CentroDTO.setPersonal(Centro.getPersonal());;
 		
 		return CentroDTO;
 	}
