@@ -2,22 +2,56 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista Tabla</title>
+<!-- <link href="css/estilo.css" rel="stylesheet" type="text/css"/> -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}"
+	href="/css/estilo.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script>
 </head>
 <body>
+	<nav id=navegacion>
+		<a href="#" value="1">atencion primaria</a> <a href="#" value="2">cecilia
+			grierson</a> <a href="#" value="3">la matera</a> <a href="#" value="">todos</a>
+	</nav>
+
+
+<!-- <select name="select">
+		<option id="opciones" th:each="centro : ${centros}"
+			th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+	</select> -->
+	
+	<aside id=asideItems>
+	<a id="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+	<a>perfil</a>
+	<a>configuracion</a>
+	<a>secciones</a>
+	<a>administracion</a>
+	<a>mas administracion</a>
+	<a>usuarios</a>
+	<a>graficos</a>
+	</aside>
+
 	<table id="tabla">
-    	<tr id="fila cabecera">
-        	<th class="celda celdaCabecera">id</th>
-            <th class="celda celdaCabecera">nombre</th>
-            <th class="celda celdaCabecera">apellido</th>
-            <th class="celda celdaCabecera">funcion</th>
-            <th class="celda celdaCabecera">domicilio</th>
-            <th class="celda celdaCabecera">oficina</th>
-            <th class="celda celdaCabecera">horario</th>
-            <th class="celda celdaCabecera">legajo</th>
-        </tr>
-        <tr th:each="persona : ${personas}">
-		<td id="celda" th:text="${persona.id}">sd-4</td>
+		<thead>
+			<tr id="fila cabecera">
+				<th class="celda celdaCabecera">id</th>
+				<th class="celda celdaCabecera">nombre</th>
+				<th class="celda celdaCabecera">apellido</th>
+				<th class="celda celdaCabecera">funcion</th>
+				<th class="celda celdaCabecera">domicilio</th>
+				<th class="celda celdaCabecera">oficina</th>
+				<th class="celda celdaCabecera">horario</th>
+				<th class="celda celdaCabecera">legajo</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+
+		<!-- 		<tr th:each="persona : ${personas}">
+			<td id="celda" th:text="${persona.id}">sd-4</td>
 			<td id="celda" th:text="${persona.nombre}">sd-4</td>
 			<td id="celda" th:text="${persona.apellido}">sd-4</td>
 			<td id="celda" th:text="${persona.funcion}">sd-4</td>
@@ -25,8 +59,10 @@
 			<td id="celda" th:text="${persona.oficina}">sd-4</td>
 			<td id="celda" th:text="${persona.horario}">sd-4</td>
 			<td id="celda" th:text="${persona.legajo}">sd-4</td>
-        </tr>
-    </table>
-	     
+		</tr> -->
+	</table>
+	<footer>sdfsdf</footer>
+	<script type="text/javascript" th:src="@{/js/evento.js}"
+		src="/js/evento.js"></script>
 </body>
 </html>

@@ -42,7 +42,14 @@ public class crud_controller {
 		return new ResponseEntity<List<personDTO>>(servicioPersona.personAll(), HttpStatus.OK);
 	}
 	
-	@GetMapping(value="/{id}")
+	@PostMapping("/forCentro")
+	@ResponseBody
+	public ResponseEntity<List<personDTO>> gePersonForCentro(@RequestBody centroDTO CentroDTO){
+		return new ResponseEntity<List<personDTO>>(servicioPersona.personForCentro(CentroDTO), HttpStatus.OK);
+	}
+	
+//	@GetMapping(value="/{id}")
+	@GetMapping("/{id}")
 	@ResponseBody
 	public ResponseEntity<personDTO> getPerson(@PathVariable Long id){
 		return new ResponseEntity<personDTO>(servicioPersona.person(id), HttpStatus.OK);
