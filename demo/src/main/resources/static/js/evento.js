@@ -4,13 +4,15 @@
 $(function() {
 	console.log("Hola2");
 });
-$("select").change(
+$("a").change(
 	function(e) {
-		var option = $("option:selected");
+/*		var option = $("option:selected"); */
+        var option = $("event.target");
 		$.ajax({
 			type: "POST",
 			url: "/lista/forCentro",
-			data: JSON.stringify({ "id": option.attr("value"), "nombreCentro": option.text() }),
+	/*		data: JSON.stringify({ "id": option.attr("value"), "nombreCentro": option.text() }), */ 
+			data: JSON.stringify({"id": option.attr("value"), "nombreCentro": option.text()}),
 			dataType: "json",
 			contentType: "application/json",
 			success: function(response) {
@@ -41,7 +43,7 @@ $("select").change(
 			}
 		});
 	});
-$("a").click(
+/* $("a").click(
 	function(e) {
 		var id = $(this).attr("value");
 		console.log(id);
@@ -91,7 +93,7 @@ $("a").click(
 										"<td>"+element.horario+"</td>"+
 										"<td>"+element.legajo+"</td></tr>");
 						  });     */
-			}
+/*			}
 		});
 		e.preventDefault();
-	});
+	}); */
