@@ -45,6 +45,7 @@
 #asideItems a {
 	background-color: #415dba;
 	text-decoration: none;
+	cursor: pointer;
 	color: #fff;
 	padding: 10px 20px;
 }
