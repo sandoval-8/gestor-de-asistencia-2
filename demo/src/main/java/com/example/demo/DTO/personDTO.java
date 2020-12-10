@@ -12,7 +12,7 @@ public class personDTO {
 	public String nombre;
 	public String apellido;
 	public String funcion;
-	public centro domicilio;
+	public centro centroSalud;
 	public String oficina;
 	public String horario;
 	public String legajo;

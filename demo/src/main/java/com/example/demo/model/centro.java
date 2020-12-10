@@ -21,7 +21,7 @@ public class centro {
 	
 	private String nombreCentro;
 	
-/*	@OneToMany
-	@JoinColumn(name = "centro_id")
-	private List<person> personal = new ArrayList<person>(); */
+	@OneToMany
+//	@JoinColumn(name = "centro_id")
+	private List<person> personal = new ArrayList<person>(); 
 }

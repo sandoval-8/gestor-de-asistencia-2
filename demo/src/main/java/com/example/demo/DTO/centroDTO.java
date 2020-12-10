@@ -11,5 +11,5 @@ import lombok.Data;
 public class centroDTO {
 	public Long id;	
 	public String nombreCentro;
-//	public List<person> personal = new ArrayList<person>();
+	public List<person> personal = new ArrayList<person>();
 }

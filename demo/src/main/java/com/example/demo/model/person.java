@@ -22,6 +22,7 @@ public class person {
 //	private centro domicilio;
 	
 	@ManyToOne
+//	@JoinColumn(name="centro_id")
 	private centro centroSalud;
 	private String oficina;
 	private String horario;
