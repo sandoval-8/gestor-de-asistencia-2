@@ -4,12 +4,22 @@
 }
 
 #navegacion {
+	position: fixed;
+	z-index:1;
 	display: flex;
 	width: 100%;
 	padding: 2px 40px;
-	background-color: #415dba;
+	background-color: #4568de;
 }
-
+#navegacion {
+	display: flex;
+	justify-content: beetwen;
+	background-color: #415dba;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 20px;
+	margin-left: 5px;
+}
 #navegacion a {
 	background-color: #415dba;
 	text-decoration: none;
@@ -44,7 +54,7 @@
 }
 
 #asideItems a {
-	background-color: #415dba;
+	background-color: #4568de;
 	text-decoration: none;
 	cursor: pointer;
 	color: #fff;
@@ -72,4 +82,7 @@ td {
 
 footer {
 	clear: both;
+}
+#asideItems a:hover {
+	background-color: #7091ff;
 }

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
 <meta charset="ISO-8859-1">
 <title>Lista Tabla</title>
 <!-- <link href="css/estilo.css" rel="stylesheet" type="text/css"/> -->
@@ -12,8 +16,7 @@
 </head>
 <body>
 	<nav id=navegacion>
-		<a href="#" value="1">atencion primaria</a> <a href="#" value="2">cecilia
-			grierson</a> <a href="#" value="3">la matera</a> <a href="#" value="">todos</a>
+		<a id="sesionLogout" href="#" value="1">cerrar sesion</a>
 	</nav>
 
 
@@ -23,14 +26,7 @@
 	</select> -->
 	
 	<aside id=asideItems>
-	<a id="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
-	<a>perfil</a>
-	<a>configuracion</a>
-	<a>secciones</a>
-	<a>administracion</a>
-	<a>mas administracion</a>
-	<a>usuarios</a>
-	<a>graficos</a>
+	<a class="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
 	</aside>
 
 	<table id="tabla">

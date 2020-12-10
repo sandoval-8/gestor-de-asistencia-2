@@ -46,6 +46,10 @@ $("a").click(
 			}
 		});
 	});
+$("#asideItems a").click(function(){
+	var elemento = e.target;
+	$(this).css("background-color", "#53fc61");
+});
 /* $("a").click(
 	function(e) {
 		var id = $(this).attr("value");

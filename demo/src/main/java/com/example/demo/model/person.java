@@ -28,53 +28,8 @@ public class person {
 	private String horario;
 	private String legajo;
 	
-	public Long getId() {
-		return id;
+	public person (){
+		
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getFuncion() {
-		return funcion;
-	}
-	public void setFuncion(String funcion) {
-		this.funcion = funcion;
-	}
-/*	public centro getDomicilio() {
-		return domicilio;
-	}
-	public void setDomicilio(centro domicilio) {
-		this.domicilio = domicilio;
-	} */
-	public String getOficina() {
-		return oficina;
-	}
-	public void setOficina(String oficina) {
-		this.oficina = oficina;
-	}
-	public String getHorario() {
-		return horario;
-	}
-	public void setHorario(String horario) {
-		this.horario = horario;
-	}
-	public String getLegajo() {
-		return legajo;
-	}
-	public void setLegajo(String legajo) {
-		this.legajo = legajo;
-	}	
 
 }
