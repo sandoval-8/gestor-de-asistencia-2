@@ -2,16 +2,25 @@
 	padding: 0px;
 	margin: 0px;
 }
-
-#navegacion {
-	position: fixed;
-	z-index:1;
+body{
 	display: flex;
-	width: 100%;
+	margin: 0 auto;
+}
+#contenedor{
+	display: flex;
+	width:960px;
+	background-color: #ffe4c9;
+}
+#navegacion {
+/*	position: relative;
+	z-index:1; */ 
+	display: flex;
+	width: 960px;
 	padding: 2px 40px;
 	background-color: #4568de;
 }
-#navegacion {
+
+/* #navegacion {
 	display: flex;
 	justify-content: beetwen;
 	background-color: #415dba;
@@ -19,7 +28,7 @@
 	color: #fff;
 	padding: 10px 20px;
 	margin-left: 5px;
-}
+} */
 #navegacion a {
 	background-color: #415dba;
 	text-decoration: none;
@@ -63,13 +72,13 @@
 
 #tabla {
 	border-collapse: collapse;
-	position: relative;
+/* 	position: relative; */
 	top: 40px;
 	left: 200px;
 }
 
 th {
-	position: relative;
+/*	position: relative; */
 	padding: 5px 20px;
 	background-color: dimgray;
 	color: floralwhite;
