@@ -17,6 +17,9 @@
 <body>
 	<div id="contenedor">
 		<nav id=navegacion>
+		<div id="searchContenedor">
+			<input type="text" id="search" placeholder="SEARCH" >
+		</div>
 			<a id="sesionLogout" href="#" value="1">cerrar sesion</a>
 		</nav>
 
@@ -25,8 +28,8 @@
 		<option id="opciones" th:each="centro : ${centros}"
 			th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
 	</select> -->
-
-		<aside id=asideItems>
+		<div id="contenedorCuerpoPrincipal">
+			<aside id=asideItems>
 			<a class="opciones" th:each="centro : ${centros}"
 				th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
 		</aside>
@@ -47,6 +50,8 @@
 			<tbody>
 
 			</tbody>
+		</div>
+		
 
 			<!-- 		<tr th:each="persona : ${personas}">
 			<td id="celda" th:text="${persona.id}">sd-4</td>
