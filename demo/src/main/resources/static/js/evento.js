@@ -46,9 +46,14 @@ $("a").click(
 			}
 		});
 	});
-$("#asideItems a").click(function(){
+$("#asideItems a").click(function(e){
 	var elemento = e.target;
-	$(this).css("background-color", "#53fc61");
+	$("#asideItems a").css("background-color","#5c5c5c");
+	$(this).css("background-color", "#787878");
+});
+$("#asideItems a").hover(function(e){
+	$("#asideItems a").css("background-color","#5c5c5c");
+	$(this).css("background-color", "#7091ff");
 });
 /* $("a").click(
 	function(e) {
