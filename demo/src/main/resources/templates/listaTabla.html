@@ -16,10 +16,20 @@
 </head>
 <body>
 	<div id="contenedor">
-		<nav id=navegacion>
-		<div id="searchContenedor">
-			<input type="text" id="search" placeholder="SEARCH" >
+	<!-- CONTENIDO MODAL -->
+		<div id="miModal" class="modal">
+			<div class="modal-contenido">
+				<a href="#">X</a>
+				<h2>Modal</h2>
+				<p></p>
+			</div>
 		</div>
+	<!-- FIN CONTENIDO MODAL -->
+	
+		<nav id=navegacion>
+			<div id="searchContenedor">
+				<input type="text" id="search" placeholder="SEARCH">
+			</div>
 			<a id="sesionLogout" href="#" value="1">cerrar sesion</a>
 		</nav>
 
@@ -30,31 +40,34 @@
 	</select> -->
 		<div id="contenedorCuerpoPrincipal">
 			<aside id=asideItems>
-			<a class="opciones" th:each="centro : ${centros}"
-				th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
-		</aside>
+				<a class="opciones" th:each="centro : ${centros}"
+					th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+			</aside>
 
-		<table id="tabla">
-			<thead>
-				<tr id="fila cabecera">
-					<th class="celda celdaCabecera">id</th>
-					<th class="celda celdaCabecera">nombre</th>
-					<th class="celda celdaCabecera">apellido</th>
-					<th class="celda celdaCabecera">funcion</th>
-					<th class="celda celdaCabecera">domicilio</th>
-					<th class="celda celdaCabecera">oficina</th>
-					<th class="celda celdaCabecera">horario</th>
-					<th class="celda celdaCabecera">legajo</th>
-				</tr>
-			</thead>
-			<tbody>
+			<table id="tabla">
+				<thead>
+					<tr id="fila cabecera">
+						<th class="celda celdaCabecera">id</th>
+						<th class="celda celdaCabecera">nombre</th>
+						<th class="celda celdaCabecera">apellido</th>
+						<th class="celda celdaCabecera">funcion</th>
+						<th class="celda celdaCabecera">domicilio</th>
+						<th class="celda celdaCabecera">oficina</th>
+						<th class="celda celdaCabecera">horario</th>
+						<th class="celda celdaCabecera">legajo</th>
+					</tr>
+				</thead>
+				<tbody>
 
-			</tbody>
+				</tbody>
 			</table>
+			<div id="barraInferior">
+				<a><p>Descargar</P></a><a href="#miModal">crear</a>
+			</div>
 		</div>
-		
 
-			<!-- 		<tr th:each="persona : ${personas}">
+
+		<!-- 		<tr th:each="persona : ${personas}">
 			<td id="celda" th:text="${persona.id}">sd-4</td>
 			<td id="celda" th:text="${persona.nombre}">sd-4</td>
 			<td id="celda" th:text="${persona.apellido}">sd-4</td>
@@ -64,8 +77,10 @@
 			<td id="celda" th:text="${persona.horario}">sd-4</td>
 			<td id="celda" th:text="${persona.legajo}">sd-4</td>
 		</tr> -->
-		
-		<footer><p>Todos los derechos reservados &copy; </p></footer>
+
+		<footer>
+			<p>Todos los derechos reservados &copy;</p>
+		</footer>
 		<script type="text/javascript" th:src="@{/js/evento.js}"
 			src="/js/evento.js"></script>
 	</div>
