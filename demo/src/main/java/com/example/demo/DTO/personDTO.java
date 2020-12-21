@@ -19,7 +19,19 @@ public class personDTO {
 	
 	public personDTO() {
 		
+	}
+
+	public personDTO(String nombre, String apellido, String funcion, centro centroSalud, String oficina, String horario,
+			String legajo) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.funcion = funcion;
+		this.centroSalud = centroSalud;
+		this.oficina = oficina;
+		this.horario = horario;
+		this.legajo = legajo;
 	}	
+	
 	
 	
 /*	public personDTO(person persona) {

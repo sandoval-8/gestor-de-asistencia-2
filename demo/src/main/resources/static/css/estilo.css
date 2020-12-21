@@ -122,8 +122,8 @@ footer {
 /*CONTENIDO MODAL*/
 .modal-contenido{
   background-color: #f5f5f5;
-  width:600px;
-  height: 400px;
+  width:28.571em;
+  height: 39.286em;
   padding: 10px 20px;
   margin: 0px auto;
   position: relative;
@@ -131,7 +131,7 @@ footer {
 .modal{
   background-color: rgba(0,0,0,.8);
   position:fixed;
-  z-index:1;
+  z-index:5;
   top:0;
   right:0;
   bottom:0;
@@ -141,6 +141,26 @@ footer {
 }
 #miModal:target{
   opacity:1;
+  z-index:5;
   pointer-events:auto;
+}
+#tablaFormulario {
+	padding-top: 20px;
+}
+#tablaFormulario td {
+	border: none;
+}
+#ultimaCelda {
+/* 	display: flex; */
+}
+#formularioRegistro label{
+	padding: 10px 20px;
+}
+#formularioRegistro input{
+	padding: 10px 20px;
+}
+#target{
+	display:block;
+	padding: 10px 20px;
 }
 /*FIN CONTENIDO MODAL*/

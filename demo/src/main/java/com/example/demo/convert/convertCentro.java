@@ -17,7 +17,7 @@ public class convertCentro {
 		
 		Centro.setId(CentroDTO.getId());
 		Centro.setNombreCentro(CentroDTO.getNombreCentro());
-		Centro.setPersonal(CentroDTO.getPersonal());
+	//	Centro.setPersonal(CentroDTO.getPersonal());
 		
 		return Centro;
 	}
@@ -27,7 +27,7 @@ public class convertCentro {
 		
 		CentroDTO.setId(Centro.getId());
 		CentroDTO.setNombreCentro(Centro.getNombreCentro());
-		CentroDTO.setPersonal(Centro.getPersonal());
+	//	CentroDTO.setPersonal(Centro.getPersonal());
 		
 		return CentroDTO;
 	}
