@@ -86,8 +86,8 @@ function cargarDatos() {
 			"apellido": $("#apellido").val(),
 			"funcion": $("#funcion").val(),
 			"centroSalud": {
-				"id": id,
-				"nombreCentro": nombreCentro
+				"id": id
+/*				"nombreCentro": nombreCentro */
 			},
 			"oficina": $("#oficina").val(),
 			"horario": $("#horario").val(),

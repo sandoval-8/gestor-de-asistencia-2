@@ -16,4 +16,6 @@ public interface personRepository extends JpaRepository<person, Long>{
 	
 	public Optional<person> findById(Long id);
 	
+	public Optional<person> findByLegajo(String legajo);
+	
 }

@@ -54,10 +54,11 @@ public class personService{
 	
 	//CREA UNA PERSONA
 	public personDTO createPerson(personDTO personaDTO) {
-		boolean persona = repositorio.findById(convertidor.getPerson(personaDTO).getId()).isPresent();
+//		boolean persona = repositorio.findById(convertidor.getPerson(personaDTO).getId()).isPresent();
+		boolean persona = repositorio.findByLegajo(personaDTO.getLegajo()).isPresent();
 		if(persona == true) {
 			System.out.println("El usuario ya existe");
-			return convertidor.getPersonDTO((person)repositorio.findById(convertidor.getPerson(personaDTO).getId()).get());
+			return convertidor.getPersonDTO((person)repositorio.findByLegajo(personaDTO.getLegajo()).get());
 		}else {
 			return convertidor.getPersonDTO((person)repositorio.save(convertidor.getPerson(personaDTO)));
 		}

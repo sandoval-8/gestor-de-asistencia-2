@@ -14,7 +14,7 @@
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script> -->
 <script type="text/javascript" th:src="@{/js/jquery.js}"
-			src="/js/jquery.js"></script>
+	src="/js/jquery.js"></script>
 </head>
 <body>
 	<div id="contenedor">
@@ -25,46 +25,21 @@
 				<h2>Cargar Persona</h2>
 				<!-- 				<form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
 				<form id="formularioRegistro">
-					<table id="tablaFormulario">
-						<tr>
-							<td><label>nombre</label></td>
-							<td><input type="text" id="nombre"></td>
-						</tr>
-						<tr>
-							<td><label>apellido</label></td>
-							<td><input type="text" id="apellido"></td>
-						</tr>
-						<tr>
-							<td><label>funcion</label></td>
-							<td><input type="text" id="funcion"></td>
-						</tr>
+				
+					<label id="label1">nombre</label> <input type="text" id="nombre"> 
+					<label id="label2">apellido</label>	<input type="text" id="apellido"> 
+					<label id="label3">funcion</label> <input type="text" id="funcion"> 
+					<label id="label4">domicilio</label> 
+					<select name="select" id="target">
+						<option id="opciones" text="">
+						<option id="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+					</select>
+					<label id="label5">oficina</label> <input type="text" id="oficina"> 
+					<label id="label6">horario</label> <input type="text" id="horario"> 
+					<label id="label7">legajo</label> <input type="text" id="legajo"> 
+					<input type="button" value="Cargar" onclick="cargarDatos()"> 
+					<input type="button" href="" value="Cancelar">
 
-						<tr>
-							<td><label>domicilio</label></td>
-							<td><select name="select" id="target">
-									<option id="opciones" text="">
-									<option id="opciones" th:each="centro : ${centros}"
-										th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
-							</select></td>
-						</tr>
-						<tr>
-							<td><label>oficina</label></td>
-							<td><input type="text" id="oficina"></td>
-						</tr>
-						<tr>
-							<td><label>horario</label></td>
-							<td><input type="text" id="horario"></td>
-						</tr>
-						<tr>
-							<td><label>legajo</label></td>
-							<td><input type="text" id="legajo"></td>
-						</tr>
-						<tr>
-							<td id="ultimaCelda"><input type="button" value="Cargar"
-								onclick="cargarDatos()"> <input type="button" href=""
-								value="Cancelar"></td>
-						</tr>
-					</table>
 				</form>
 			</div>
 		</div>

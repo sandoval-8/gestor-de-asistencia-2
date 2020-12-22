@@ -18,12 +18,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.DTO.centroDTO;
 import com.example.demo.DTO.personDTO;
+import com.example.demo.model.person;
+import com.example.demo.repository.personRepository;
 import com.example.demo.service.centroService;
 import com.example.demo.service.personService;
 
 @Controller
 @RequestMapping("/lista")
 public class crud_controller {
+	
+	@Autowired
+	private personRepository repositorioPersona;
 	
 	@Autowired
 	private personService servicioPersona;
@@ -62,6 +67,8 @@ public class crud_controller {
 	@PostMapping
 	@ResponseBody
 	public ResponseEntity<personDTO> createPerson(@RequestBody personDTO personaDTO){
+//		repositorioPersona.save(personaDTO);		
+//		return new ResponseEntity<person>((repositorioPersona.findById(personaDTO.getId())).get(),HttpStatus.OK);	
 		return new ResponseEntity<personDTO>(servicioPersona.createPerson(personaDTO), HttpStatus.OK);		
 	}
 	
