@@ -10,6 +10,8 @@
 <!-- <link href="css/estilo.css" rel="stylesheet" type="text/css"/> -->
 <link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}"
 	href="/css/estilo.css" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/estiloModal.css}"
+	href="/css/estiloModal.css" />
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script> -->
@@ -26,20 +28,21 @@
 				<!-- 				<form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
 				<form id="formularioRegistro">
 				
-					<label id="label1">nombre</label> <input type="text" id="nombre"> 
-					<label id="label2">apellido</label>	<input type="text" id="apellido"> 
-					<label id="label3">funcion</label> <input type="text" id="funcion"> 
-					<label id="label4">domicilio</label> 
+					<label class="labelModal">nombre</label> <input type="text" id="nombre"> 
+					<label class="labelModal">apellido</label>	<input type="text" id="apellido"> 
+					<label class="labelModal">funcion</label> <input type="text" id="funcion"> 
+					<label class="labelModal">domicilio</label> 
 					<select name="select" id="target">
 						<option id="opciones" text="">
 						<option id="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
 					</select>
-					<label id="label5">oficina</label> <input type="text" id="oficina"> 
-					<label id="label6">horario</label> <input type="text" id="horario"> 
-					<label id="label7">legajo</label> <input type="text" id="legajo"> 
-					<input type="button" value="Cargar" onclick="cargarDatos()"> 
-					<input type="button" href="" value="Cancelar">
-
+					<label class="labelModal">oficina</label> <input type="text" id="oficina"> 
+					<label class="labelModal">horario</label> <input type="text" id="horario"> 
+					<label class="labelModal">legajo</label> <input type="text" id="legajo">
+					<div id="contenedorBotonModal">
+						<input id="boton1" class="botonModal" type="button" value="Cargar" onclick="cargarDatos()">
+						<input id="boton2" class="botonModal" type="button" href="" value="Cancelar">
+					</div>
 				</form>
 			</div>
 		</div>
@@ -59,8 +62,10 @@
 	</select> -->
 		<div id="contenedorCuerpoPrincipal">
 			<aside id=asideItems>
-				<a class="opciones" th:each="centro : ${centros}"
-					th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+				<!-- <div> -->
+					<a class="opciones" th:each="centro : ${centros}"
+						th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+					<!-- </div> -->
 			</aside>
 
 			<table id="tabla">
@@ -80,9 +85,6 @@
 
 				</tbody>
 			</table>
-			<div id="barraInferior">
-				<a><p>Descargar</P></a><a href="#miModal">crear</a>
-			</div>
 		</div>
 
 
@@ -96,7 +98,11 @@
 			<td id="celda" th:text="${persona.horario}">sd-4</td>
 			<td id="celda" th:text="${persona.legajo}">sd-4</td>
 		</tr> -->
-
+		<div id="contenedorBtn">
+			<div id="barraInferior">
+				<a><p>Descargar</P></a><a href="#miModal">crear</a>
+			</div>
+		</div>
 		<footer>
 			<p>Todos los derechos reservados &copy;</p>
 		</footer>
