@@ -8,7 +8,7 @@
 	position: relative;
 }
 
-.modal {
+.modal{
 	background-color: rgba(0, 0, 0, .8);
 	position: fixed;
 	z-index: 5;
@@ -19,8 +19,23 @@
 	opacity: 0;
 	pointer-events: none;
 }
-
+.modal2{
+	background-color: rgba(0, 0, 0, .8);
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+}
 #miModal:target {
+	opacity: 1;
+	z-index: 5;
+	pointer-events: auto;
+}
+#miModal2:target {
 	opacity: 1;
 	z-index: 5;
 	pointer-events: auto;
@@ -38,6 +53,16 @@
 }
 
 #formularioRegistro {
+	margin-top: 50px;
+	margin-right: 25px;
+	margin-left: 25px;
+	display: grid;
+	grid-template-columns:  1fr 2fr;
+	grid-template-rows: repeat(7, 1fr) 2fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+#formularioRegistro2 {
 	margin-top: 50px;
 	margin-right: 25px;
 	margin-left: 25px;

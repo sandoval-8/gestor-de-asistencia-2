@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.DTO.centroDTO;
 import com.example.demo.DTO.personDTO;
-import com.example.demo.model.person;
+import com.example.demo.model.Legajo;
 import com.example.demo.repository.personRepository;
 import com.example.demo.service.centroService;
 import com.example.demo.service.personService;
@@ -36,6 +36,8 @@ public class crud_controller {
 	@Autowired
 	private centroService servicioCentro;
 	
+//	private Legajo legajoPersona;
+	
 	//CONSULTAR TODOS LOS CENTROS
 	@GetMapping("/centros")
 	public ResponseEntity<List<personDTO>> getCentros(@RequestBody centroDTO CentroDTO){
@@ -49,6 +51,13 @@ public class crud_controller {
 		return new ResponseEntity<List<personDTO>>(servicioPersona.personAll(), HttpStatus.OK);
 	}
 	
+	//CONSULTAR POR LEGAJO
+	@GetMapping("/persona/legajo")
+	@ResponseBody
+	public ResponseEntity<personDTO> getPersonForLegajo(@RequestBody Legajo legajo){
+		System.out.println(legajo.getLegajo());
+		return new ResponseEntity<personDTO>(servicioPersona.personLegajo(legajo.getLegajo().toString()), HttpStatus.OK);
+	}
 	//CONSULTAR PERSONAS POR CENTRO
 	@PostMapping("/forCentro")
 	@ResponseBody

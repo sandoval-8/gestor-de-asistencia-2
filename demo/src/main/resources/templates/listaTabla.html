@@ -7,7 +7,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta charset="ISO-8859-1">
 <title>Lista Tabla</title>
-<!-- <link href="css/estilo.css" rel="stylesheet" type="text/css"/> -->
 <link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}"
 	href="/css/estilo.css" />
 <link rel="stylesheet" type="text/css" th:href="@{/css/estiloModal.css}"
@@ -23,30 +22,62 @@
 		<!-- CONTENIDO MODAL -->
 		<div id="miModal" class="modal">
 			<div class="modal-contenido">
-				<a href="">X</a>
 				<h2>Cargar Persona</h2>
-				<!-- 				<form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
+				<!-- <form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
 				<form id="formularioRegistro">
-				
-					<label class="labelModal">nombre</label> <input type="text" id="nombre"> 
-					<label class="labelModal">apellido</label>	<input type="text" id="apellido"> 
-					<label class="labelModal">funcion</label> <input type="text" id="funcion"> 
-					<label class="labelModal">domicilio</label> 
-					<select name="select" id="target">
-						<option id="opciones" text="">
-						<option id="opciones" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
-					</select>
-					<label class="labelModal">oficina</label> <input type="text" id="oficina"> 
-					<label class="labelModal">horario</label> <input type="text" id="horario"> 
-					<label class="labelModal">legajo</label> <input type="text" id="legajo">
-					<div id="contenedorBotonModal">
-						<input id="boton1" class="botonModal" type="button" value="Cargar" onclick="cargarDatos()">
-						<input id="boton2" class="botonModal" type="button" href="" value="Cancelar">
+
+					<label class="labelModal">nombre</label> <input type="text"
+						id="nombre2"> <label class="labelModal">apellido</label> <input
+						type="text" id="apellido2"> <label class="labelModal">funcion</label>
+					<input type="text" id="funcion2"> <label class="labelModal">domicilio</label>
+					<select name="select" id="target2">
+						<option id="opciones2" text="">
+						<option id="opciones2" th:each="centro : ${centros}"
+							th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+					</select> <label class="labelModal">oficina</label> <input type="text"
+						id="oficina2"> <label class="labelModal">horario</label> <input
+						type="text" id="horario2"> <label class="labelModal">legajo</label>
+					<input type="text" id="legajo2">
+					<div id="contenedorBotonModal2">
+						<input id="boton1-2" class="botonModal" type="button" value="Cargar"
+							onclick="cargarDatos()"> <!-- <input id="boton2"
+							class="botonModal" type="button" href="" value="Cancelar"> -->
+						<a href="" id="boton2-2" class="botonModal">Cancelar</a>
 					</div>
 				</form>
 			</div>
 		</div>
 		<!-- FIN CONTENIDO MODAL -->
+		
+		<!-- 2DO CONTENIDO MODAL -->
+		<div id="miModal2" class="modal">
+			<div class="modal-contenido">
+				<h2>Editar Persona</h2>
+				<!-- <form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
+				<form id="formularioRegistro2">
+					<label class="labelModal">legajo</label>
+					<input type="text" id="legajo">
+					<label class="labelModal">nombre</label> <input type="text"
+						id="nombre"> <label class="labelModal">apellido</label> <input
+						type="text" id="apellido"> <label class="labelModal">funcion</label>
+					<input type="text" id="funcion"> <label class="labelModal">domicilio</label>
+					<select name="select" id="target">
+						<option id="opciones" text="">
+						<option id="opciones" th:each="centro : ${centros}"
+							th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+					</select> <label class="labelModal">oficina</label> <input type="text"
+						id="oficina"> <label class="labelModal">horario</label> <input
+						type="text" id="horario"> 
+					<div id="contenedorBotonModal">
+						<input id="boton1" class="botonModal" type="button" value="Cargar"
+							onclick="cargarDatos()"> <!-- <input id="boton2"
+							class="botonModal" type="button" href="" value="Cancelar"> -->
+						<a href="" id="boton2" class="botonModal">Cancelar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- FIN 2DO CONTENIDO MODAL -->
 
 		<nav id=navegacion>
 			<div id="searchContenedor">
@@ -63,28 +94,29 @@
 		<div id="contenedorCuerpoPrincipal">
 			<aside id=asideItems>
 				<!-- <div> -->
-					<a class="opciones" th:each="centro : ${centros}"
-						th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
-					<!-- </div> -->
+				<a class="opciones" th:each="centro : ${centros}"
+					th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+				<!-- </div> -->
 			</aside>
+			<div id="contenedor-tabla">
+				<table id="tabla">
+					<thead>
+						<tr id="fila cabecera">
+							<th class="celda celdaCabecera">id</th>
+							<th class="celda celdaCabecera">nombre</th>
+							<th class="celda celdaCabecera">apellido</th>
+							<th class="celda celdaCabecera">funcion</th>
+							<th class="celda celdaCabecera">domicilio</th>
+							<th class="celda celdaCabecera">oficina</th>
+							<th class="celda celdaCabecera">horario</th>
+							<th class="celda celdaCabecera">legajo</th>
+						</tr>
+					</thead>
+					<tbody>
 
-			<table id="tabla">
-				<thead>
-					<tr id="fila cabecera">
-						<th class="celda celdaCabecera">id</th>
-						<th class="celda celdaCabecera">nombre</th>
-						<th class="celda celdaCabecera">apellido</th>
-						<th class="celda celdaCabecera">funcion</th>
-						<th class="celda celdaCabecera">domicilio</th>
-						<th class="celda celdaCabecera">oficina</th>
-						<th class="celda celdaCabecera">horario</th>
-						<th class="celda celdaCabecera">legajo</th>
-					</tr>
-				</thead>
-				<tbody>
-
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 
@@ -100,12 +132,14 @@
 		</tr> -->
 		<div id="contenedorBtn">
 			<div id="barraInferior">
-				<a><p>Descargar</P></a><a href="#miModal">crear</a>
+				<button onclick="holaPrro()">Descargar</button>
+				<button onclick="actualizar()">Actualizar</button>
+				<button onclick="crear()">Crear</button>
 			</div>
 		</div>
-		<footer>
+<!-- 		<footer>
 			<p>Todos los derechos reservados &copy;</p>
-		</footer>
+		</footer> -->
 		<script type="text/javascript" th:src="@{/js/evento.js}"
 			src="/js/evento.js"></script>
 	</div>

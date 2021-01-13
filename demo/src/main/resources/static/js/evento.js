@@ -64,6 +64,32 @@ $("#target").change(function() {
 		console.log(id + " " + nombreCentro);
 	});
 })
+$("#legajo").blur(function(){
+	console.log("Se ejecuto evento blur");
+	console.log("legajo " + $("#legajo").val());
+	$.ajax({
+		type: "GET",
+		url: "lista/persona/legajo",
+		data: JSON.stringify({
+//			"id": $("#id").val()
+			"legajo": $("#legajo").val()
+		}),
+		dataType: "json",
+		contentType: "application/json",
+		success: function(response){
+			console.log("respuesta del servidor "+response);
+		}
+	});
+})
+var mostrarModal = {"opacity": "1",
+	"z-index": "5",
+	"pointer-events": "auto"};
+function actualizar(){
+	$("#miModal2").css(mostrarModal);
+}
+function crear(){
+	$("#miModal").css(mostrarModal);
+}
 function cargarDatos() {
 	console.log({
 		"nombre": $("#nombre").val(),
@@ -115,7 +141,6 @@ function cargarDatos() {
 					$("tbody").html("")
 					for (var i = 0; i < element.length; i++) {
 						//     		console.log(element[i].id + " " + element[i].nombre);
-
 						$("tbody").append("<tr><td>" + element[i].id + "</td>"
 							+ "<td>" + element[i].nombre + "</td>"
 							+ "<td>" + element[i].apellido + "</td>"
@@ -136,7 +161,6 @@ function cargarDatos() {
 						+ "<td>" + element.horario + "</td>"
 						+ "<td>" + element.legajo + "</td></tr>");
 				}
-
 				          response.forEach(element => {
 								console.log(element);
 							  $("#tabla").append("<tr><td>"+element.id+"</td>"+
