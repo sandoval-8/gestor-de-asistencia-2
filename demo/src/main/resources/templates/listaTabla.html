@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta charset="ISO-8859-1">
+<title>Lista Tabla</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}"
+	href="/css/estilo.css" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/estiloModal.css}"
+	href="/css/estiloModal.css" />
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script> -->
+<script type="text/javascript" th:src="@{/js/jquery.js}"
+	src="/js/jquery.js"></script>
+</head>
+<body>
+	<div id="contenedor">
+		<!-- CONTENIDO MODAL -->
+		<div id="miModal_create" class="modal">
+			<div class="modal-contenido">
+				<h2>Cargar Persona</h2>
+				<!-- <form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
+				<form id="formularioRegistro">
+
+					<label class="labelModal">nombre</label> <input type="text"	id="nombre_crear"> 
+					<label class="labelModal">apellido</label> <input type="text" id="apellido_crear"> 
+					<label class="labelModal">funcion</label> <input type="text" id="funcion_crear"> 
+					<label class="labelModal">domicilio</label>
+					<select name="select" id="target_crear">
+						<option id="opciones_crear" text="">
+						<option id="opciones_crear" th:each="centro : ${centros}" th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+					</select> 
+					<label class="labelModal">oficina</label> <input type="text" id="oficina_crear"> 
+					<label class="labelModal">horario</label> <input type="text" id="horario_crear"> 
+					<label class="labelModal">legajo</label> <input type="text" id="legajo_crear">
+					
+					<div id="contenedorBotonModal2">
+						<input id="boton1-2" class="botonModal" type="button" value="Cargar" onclick="createPerson()">
+						<a href="" id="boton2-2" class="botonModal">Cancelar</a>
+						
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- FIN CONTENIDO MODAL -->
+		
+		<!-- 2DO CONTENIDO MODAL -->
+		<div id="miModal_editar" class="modal">
+			<div class="modal-contenido">
+				<h2>Editar Persona</h2>
+				<!-- <form th:action="@{/js/cargarDatos()}" action="#" id="formularioRegistro"> -->
+				<form id="formularioRegistro2">
+				
+					<label class="labelModal">legajo</label> <input type="text" id="legajo_editar">
+					<label class="labelModal">nombre</label> <input type="text"	id="nombre_editar"> 
+					<label class="labelModal">apellido</label> <input type="text" id="apellido_editar"> 
+					<label class="labelModal">funcion</label> <input type="text" id="funcion_editar"> 
+					<label class="labelModal">domicilio</label>
+					<select name="select" id="target_editar">
+						<option id="opciones_editar" text="">
+						<option id="opciones_editar" th:each="centro : ${centros}"	th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+					</select> 
+					<label class="labelModal">oficina</label> <input type="text" id="oficina_editar"> 
+					<label class="labelModal">horario</label> <input type="text" id="horario_editar"> 
+					
+					<div id="contenedorBotonModal">
+						<input id="boton1" class="botonModal" type="button" value="Cargar" onclick="editPerson()"> <!-- <input id="boton2"
+							class="botonModal" type="button" href="" value="Cancelar"> -->
+						<a href="" id="boton2" class="botonModal">Cancelar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- FIN 2DO CONTENIDO MODAL -->
+
+		<nav id=navegacion>
+			<div id="searchContenedor">
+				<input type="text" id="search" placeholder="SEARCH">
+			</div>
+			<a id="sesionLogout" href="#" value="1">cerrar sesion</a>
+		</nav>
+
+
+		<!-- <select name="select">
+		<option id="opciones" th:each="centro : ${centros}"
+			th:value="${centro.id}" th:text="${centro.nombreCentro}"></option>
+	</select> -->
+		<div id="contenedorCuerpoPrincipal">
+			<aside id=asideItems>
+				<!-- <div> -->
+				<a class="opciones" th:each="centro : ${centros}"
+					th:value="${centro.id}" th:text="${centro.nombreCentro}"></a>
+				<!-- </div> -->
+			</aside>
+			<div id="contenedor-tabla">
+				<table id="tabla">
+					<thead>
+						<tr id="fila cabecera">
+							<th class="celda celdaCabecera">id</th>
+							<th class="celda celdaCabecera">nombre</th>
+							<th class="celda celdaCabecera">apellido</th>
+							<th class="celda celdaCabecera">funcion</th>
+							<th class="celda celdaCabecera">domicilio</th>
+							<th class="celda celdaCabecera">oficina</th>
+							<th class="celda celdaCabecera">horario</th>
+							<th class="celda celdaCabecera">legajo</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<!-- 		<tr th:each="persona : ${personas}">
+			<td id="celda" th:text="${persona.id}">sd-4</td>
+			<td id="celda" th:text="${persona.nombre}">sd-4</td>
+			<td id="celda" th:text="${persona.apellido}">sd-4</td>
+			<td id="celda" th:text="${persona.funcion}">sd-4</td>
+			<td id="celda" th:text="${persona.domicilio}">sd-4</td>
+			<td id="celda" th:text="${persona.oficina}">sd-4</td>
+			<td id="celda" th:text="${persona.horario}">sd-4</td>
+			<td id="celda" th:text="${persona.legajo}">sd-4</td>
+		</tr> -->
+		<div id="contenedorBtn">
+			<div id="barraInferior">
+				<button onclick="descargar()">Descargar</button>
+				<button onclick="actualizarMostrar()">Actualizar</button>
+				<button onclick="crearMostrar()">Crear</button>
+			</div>
+		</div>
+<!-- 		<footer>
+			<p>Todos los derechos reservados &copy;</p>
+		</footer> -->
+		<script type="text/javascript" th:src="@{/js/evento.js}"
+			src="/js/evento.js"></script>
+	</div>
+</body>
+</html>
