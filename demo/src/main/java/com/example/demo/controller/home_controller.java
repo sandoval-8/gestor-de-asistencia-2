@@ -29,4 +29,8 @@ public class home_controller {
 		modelo.addAttribute("centros", centros);
 		return "listaTabla";
 	}
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
 }

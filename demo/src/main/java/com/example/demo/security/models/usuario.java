@@ -2,11 +2,13 @@ package com.example.demo.security.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class usuario {
@@ -21,6 +23,6 @@ public class usuario {
 	
 	private Boolean enabled;
 	
-	@JoinColumn
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Role> roles;
 }
